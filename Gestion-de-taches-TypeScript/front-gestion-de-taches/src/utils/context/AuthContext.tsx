@@ -39,6 +39,7 @@ export const AuthProvider = ({ children }) =>{
     const logout = () => {
         console.log("entree dnas logout()")
         localStorage.removeItem("user")
+        document.location.href="/signup"
     } 
 
     return(
