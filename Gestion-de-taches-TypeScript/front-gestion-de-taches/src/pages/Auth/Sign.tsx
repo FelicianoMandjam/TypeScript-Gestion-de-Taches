@@ -16,13 +16,15 @@ const Sign = () => {
         console.log("Entree dans le handleSubmit()")
         e.preventDefault()
         login(user)
+        document.location.href="/home"
     }
 
 
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <h1>Cennectez-vous</h1>
+        <form className='formulaireSign' onSubmit={handleSubmit}>
         <input
           type='email'
           placeholder='email'

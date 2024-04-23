@@ -7,11 +7,11 @@ const Header = () => {
   return (
     <header className="header">
       <nav>
-        <NavLink to="/">
+        <NavLink to="/home">
           <button>Home</button>{" "}
         </NavLink>
 
-        <NavLink to="/signin">
+        <NavLink to="/">
           <button>Connexion</button>{" "}
         </NavLink>
 

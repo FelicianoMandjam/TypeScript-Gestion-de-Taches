@@ -17,7 +17,11 @@ const SignUp = () => {
         try{
             console.log(user)
             const response = await axios.post(URL.USER_SIGNUP , user)
-            console.log(response)
+            const flashMessageSucess = response.data.message
+            const form = document.querySelector('.formulaire');
+            if (form ) {
+              form.innerHTML = `${flashMessageSucess}`
+            }
             
         }catch(e){
             console.log(e);
@@ -26,11 +30,10 @@ const SignUp = () => {
 
   return (
     <div>
-      <form onSubmit={hundleSubmit}>
+      <form  className="formulaire" onSubmit={hundleSubmit}>
 
         <input onChange={handleChange} type="email" placeholder='email' name="email"/>
         <input onChange={handleChange} type="password" placeholder='password' name="password"/>
-        {/* <input onChange={handleChange} type="text" placeholder='role' name="role"/> */}
         <button type='submit'> S'incrire</button>
 
       </form>
