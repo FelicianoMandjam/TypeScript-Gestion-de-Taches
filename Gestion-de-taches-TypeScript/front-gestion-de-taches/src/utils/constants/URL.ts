@@ -11,6 +11,5 @@ export const URL = {
     POST_TASKS : "http://localhost:5678/api/tasks",
     // PUT_UPDATE_TASK : "http://localhost:5678/api/{id}",
     // TASK : "http://localhost:5678/api/task/{id}",
-
-
+    
 }
