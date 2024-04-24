@@ -1,9 +1,11 @@
 interface Task {
+
     title: string,
-    content: string,
-    priority: number,
     category: number,
+    priority: number,
+    content: string,
     done: boolean,
+    expiration?: Date,
     
 }
 

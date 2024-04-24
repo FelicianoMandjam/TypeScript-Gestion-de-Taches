@@ -18,6 +18,7 @@ const Header = () => {
         <NavLink to="/signup">
           <button> S'inscrire </button>{" "}
         </NavLink>
+        
         <Logout/>
       </nav>
     </header>

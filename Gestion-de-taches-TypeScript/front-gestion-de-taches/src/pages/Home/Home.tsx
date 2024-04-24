@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import task, * as ACTIONS from "../../redux/reducers/task"
 import { URL } from "../../utils/constants/URL";
 import { allTask } from "../../utils/services/selector/taskSelector";
+import { NavLink, Link } from "react-router-dom";
+
 
 
 
@@ -44,9 +46,13 @@ const Home = () => {
     <>
       <small>Connexion obligatoire</small>
       {localStorage.length > 0 && (
+        
         //Les taches etc
         <div className="tasks">
-          <h1>page home t'es connecte</h1>
+          <h1>Connexion reussie</h1>
+          {/* <AddTaskButton/> */}
+          <Link to={"/addCategory"}> <button>Ajouter Categorie + </button> </Link>
+          <Link to={"/addTask"}> <button>Ajouter Tâches + </button> </Link>
           <div className="list-task">
             <ul>
               <li>Task</li>

@@ -5,6 +5,7 @@ import SignUp from './pages/Auth/SignUp'
 import {BrowserRouter , Routes , Route} from "react-router-dom"
 import Header from "./utils/componants/Header.jsx"
 import AddTasks from "./pages/CRUD/AddTask.js"
+import AddCategory from './pages/CRUD/AddCategory.js'
 
 import './App.css'
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Sign />}/>
         <Route path='/signup' element={<SignUp />}/>
         <Route path='/addTask' element={<AddTasks />}/>
+        <Route path='/addCategory' element={<AddCategory />}/>
       </Routes>
     </BrowserRouter>
     </>

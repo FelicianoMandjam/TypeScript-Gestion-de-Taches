@@ -6,11 +6,11 @@ import { useState } from 'react';
 const AddTasks = () => {
     const [tasks, setTasks] = useState({
         title: "",
-        content: "",
-        priority: 0,
         category: 0,
+        priority: 0,
+        content: "",
         done: true,
-        expiration: ""
+        expiration: "",
     });
 
     const handleChange = (e) => {
@@ -29,9 +29,19 @@ const AddTasks = () => {
         e.preventDefault();
 
         try{
-
         console.log("Entree try")
-            const response = await axios.post( URL.POST_TASKS, tasks)
+        // localStorage.setItem( "user" , JSON.stringify(user));
+
+        const recupToken = localStorage.getItem("user")
+        const token = JSON.parse(recupToken).token
+        // const tokenSTR = JSON.stringify(token)
+        
+        console.log(token)
+          
+
+            const response = await axios.post( URL.POST_TASKS, tasks , {
+              headers: {Authorization: `Bearer ${token}`}
+            } )
             console.log(response)
         }catch(e){
             console.log("Erreur dans la requete")
@@ -47,7 +57,7 @@ const AddTasks = () => {
 
         <div>
           <label htmlFor="title">Title</label>
-          <input onChange={handleChange} value={tasks.name} type="text" name="name" required/>
+          <input onChange={handleChange} value={tasks.title} type="text" name="title" required/>
         </div>
 
         <div>
@@ -63,6 +73,11 @@ const AddTasks = () => {
         <div>
           <label htmlFor="content">Content</label>
           <textarea onChange={handleChange} value={tasks.content} name="content" required></textarea>
+        </div>
+       
+        <div>
+          <label htmlFor="expiration">expiration</label>
+           <input onChange={handleChange} value={tasks.expiration} type="date" name="expiration" required/>
         </div>
         
         <button type="submit" value="Submit">Créer</button>
